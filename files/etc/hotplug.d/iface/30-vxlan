@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$ACTION" = "ifdown" ] && [ "$INTERFACE" = "vx0" ]; then
+   logger -t "vxlan" "detecting vx0 bug, restarting vx0 over 5 seconds."
+   sleep 5
+   ifup vx0
+fi
